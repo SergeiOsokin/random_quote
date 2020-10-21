@@ -14,7 +14,6 @@ body {
 }
 
 #quote-box {
-    border: 1px solid red;
     border-radius: 5px;
     margin: 0 auto;
     width: 50%;
@@ -24,7 +23,10 @@ body {
 
 .quote {
     margin: 0;
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .share {
@@ -32,6 +34,7 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: row;
+
     border: 1px solid black;
 }
 
@@ -42,4 +45,22 @@ body {
     margin: 30px 5px 0px 0px;
     background-color: tomato;
     text-align: center;
+    border-radius: 5px;
+}
+
+.fa-twitter, .fa-vk {
+    color: white;
+}
+
+.button_quote {
+    display: inline-block;
+    height: 30px;
+    margin: 0 0 0 70%;
+    background-color: tomato;
+    border-radius: 5px;
+    border:0;
+}
+
+.button_quote:hover, .link:hover {
+    opacity: 0.9;
 }
