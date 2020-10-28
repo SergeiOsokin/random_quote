@@ -5,7 +5,17 @@ const textQuote = document.querySelector('.text_quote');
 const authorQuote = document.querySelector('.author_quote');
 const mainSection = document.querySelector('.main');
 
-var colors = [
+const shareTwitter = document.querySelector('#tweet-quote');
+
+const linksItem = document.querySelectorAll('.link');
+
+const twit = () => {
+    shareTwitter.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=randomquote&text=' +
+    '"' + textQuote.textContent + '" ' + authorQuote.textContent)
+}
+
+
+let colors = [
     '#16a085',
     '#27ae60',
     '#2c3e50',
@@ -18,14 +28,19 @@ var colors = [
     '#BDBB99',
     '#77B1A9',
     '#73A857'
-  ];
+];
 
 let arrQuote = '';
 
 button.addEventListener('click', () => {
-   textQuote.innerHTML = '<i class="fa fa-quote-left"></i> ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].quote;
-   authorQuote.innerHTML = '- ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].author;
-   mainSection.style.backgroundColor = colors[Math.floor(Math.random() * (12 - 0) + 0)];
+    let color = colors[Math.floor(Math.random() * (12 - 0) + 0)];
+    textQuote.innerHTML = '<i class="fa fa-quote-left"></i> ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].quote;
+    authorQuote.innerHTML = '- ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].author;
+    mainSection.style.backgroundColor = color
+    button.style.backgroundColor = color;
+    linksItem.forEach((item) => {
+        item.style.backgroundColor = color
+    })
 })
 
 const getQuote = () => {
@@ -46,9 +61,16 @@ const getQuote = () => {
 }
 
 getQuote()
-.then((res) => {
-    arrQuote = res.quotes;
-    textQuote.innerHTML = '<i class="fa fa-quote-left"></i> ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].quote;
-    authorQuote.innerHTML = '- ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].author;
-    mainSection.style.backgroundColor = colors[Math.floor(Math.random() * (12 - 0) + 0)];
-})
+    .then((res) => {
+        let color = colors[Math.floor(Math.random() * (12 - 0) + 0)];
+        arrQuote = res.quotes;
+        textQuote.innerHTML = '<i class="fa fa-quote-left"></i> ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].quote;
+        authorQuote.innerHTML = '- ' + arrQuote[Math.floor(Math.random() * (102 - 0) + 0)].author;
+        mainSection.style.backgroundColor = color
+        button.style.backgroundColor = color;
+        linksItem.forEach((item) => {
+            item.style.backgroundColor = color
+        })
+    });
+
+shareTwitter.addEventListener('click', twit);
