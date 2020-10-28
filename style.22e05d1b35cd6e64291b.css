@@ -39,8 +39,6 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: row;
-
-    border: 1px solid black;
 }
 
 .link {
@@ -66,4 +64,21 @@ body {
 
 .button_quote:hover, .link:hover {
     opacity: 0.9;
+}
+
+@media screen and (min-width:320px) and (max-width:767px) {
+    #quote-box {
+        width: 90%;
+        padding: 10px 15px;
+        background-color: white;
+    }
+    .quote {
+        font-size: 1rem;
+    }
+    .link {
+        padding: 8px;
+    }
+    .button_quote {
+        font-size: 1rem;
+    }
 }
