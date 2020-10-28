@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
+body {
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#quote-box {
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 50%;
+    padding: 40px 50px;
+    background-color: white;
+}
+
+.quote {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.text_quote {
+    width: 100%;
+}
+
+.share {
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.fa-twitter, .fa-vk {
+    color: white;
+    width: 15px;
+}
+
+.button_quote {
+    display: inline-block;
+    height: 40px;
+    width: 100px;
+    margin: 0 0 0 calc(100% - 100px);
+    border-radius: 5px;
+    border:0;
+    color: white;
+}
+
+.button_quote:hover, .link:hover {
+    opacity: 0.9;
+}
+
+@media screen and (min-width:320px) and (max-width:767px) {
+    #quote-box {
+        width: 90%;
+        padding: 10px 15px;
+        background-color: white;
+    }
+    .quote {
+        font-size: 1rem;
+    }
+    .link {
+        padding: 8px;
+    }
+    .button_quote {
+        font-size: 1rem;
+    }
+}
