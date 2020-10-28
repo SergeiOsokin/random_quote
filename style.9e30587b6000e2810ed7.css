@@ -1,8 +1,9 @@
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 body {
     max-width: 1440px;
     height: 100vh;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .main {
@@ -10,7 +11,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: tomato;
 }
 
 #quote-box {
@@ -25,8 +25,13 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    font-size: 1.5rem;
+}
+
+.text_quote {
+    width: 100%;
 }
 
 .share {
@@ -40,25 +45,23 @@ body {
 
 .link {
     display: inline-block;
-    height: 30px;
-    width: 40px;
-    margin: 30px 5px 0px 0px;
-    background-color: tomato;
-    text-align: center;
     border-radius: 5px;
+    padding: 10px;
 }
 
 .fa-twitter, .fa-vk {
     color: white;
+    width: 15px;
 }
 
 .button_quote {
     display: inline-block;
-    height: 30px;
-    margin: 0 0 0 70%;
-    background-color: tomato;
+    height: 40px;
+    width: 100px;
+    margin: 0 0 0 calc(100% - 100px);
     border-radius: 5px;
     border:0;
+    color: white;
 }
 
 .button_quote:hover, .link:hover {
